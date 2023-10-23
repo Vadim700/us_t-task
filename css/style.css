@@ -1,0 +1,490 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Baskerville BT;
+  font-display: swap;
+  src: url("../fonts/Baskerville BT.woff2") format("woff2"), url("../fonts/Baskerville BT.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: ProximaNova;
+  font-display: swap;
+  src: url("../fonts/ProximaNova-Regular.woff2") format("woff2"), url("../fonts/ProximaNova-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: ProximaNova;
+  font-display: swap;
+  src: url("../fonts/ProximaNova-Semibold.woff2") format("woff2"), url("../fonts/ProximaNova-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "ProximaNova";
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "ProximaNova";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #d4d4d4;
+  --grey-white: #f8f8f8;
+  --text-primary: var(--black);
+  --stroke: var(--grey);
+}
+
+body {
+  color: #000;
+  font-style: normal;
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 88.75rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+.title {
+  font: normal 700 24px/1.38 "Baskerville BT";
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.subtitle {
+  font: normal 400 16px/1.63 "ProximaNova";
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.primary-text {
+  font: normal 400 16px/1.63 "ProximaNova";
+  letter-spacing: 0.8px;
+}
+
+.link {
+  position: relative;
+  font: normal 400 16px "ProximaNova";
+  letter-spacing: 0.8px;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background-color: var(--black);
+  transition: all 0.2s ease 0s;
+}
+@media (hover: hover) {
+  .link:hover::after {
+    display: none;
+  }
+}
+
+.wrapper {
+  padding-top: 50px;
+}
+
+.header {
+  margin-bottom: 53px;
+}
+
+.page {
+  border-bottom: 200px solid;
+}
+.page__banner {
+  margin-bottom: 51px;
+}
+.page__presentation {
+  margin: 0px auto;
+  margin-bottom: 48px;
+}
+.page__heading {
+  margin: 0px auto;
+  margin-bottom: 43px;
+}
+@media (max-width: 47.99875em) {
+  .page__heading {
+    margin-bottom: 50px;
+  }
+}
+.page__tovar {
+  margin-bottom: 50px;
+}
+@media (max-width: 47.99875em) {
+  .page__tovar {
+    margin-bottom: 60px;
+  }
+  .page__tovar_reverse {
+    margin-bottom: 52px;
+  }
+}
+.page__tovar-slider {
+  margin-bottom: 151px;
+}
+@media (max-width: 47.99875em) {
+  .page__tovar-slider {
+    margin-bottom: 152px;
+  }
+}
+.page article + article {
+  padding-top: 57px;
+}
+
+.header {
+  padding-top: 10px;
+  text-align: center;
+}
+@media (max-width: 47.99875em) {
+  .header {
+    padding-top: 0;
+  }
+}
+.header__title {
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+.banner__container img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 47.99875em) {
+  .banner__container {
+    margin: 0 -15px;
+  }
+}
+
+.heading {
+  max-width: 600px;
+  text-align: center;
+}
+.heading__container {
+  text-align: center;
+}
+.heading__title {
+  margin-bottom: 13px;
+}
+@media (max-width: 47.99875em) {
+  .heading__title {
+    margin-bottom: 20px;
+  }
+}
+.heading__description {
+  margin-bottom: 30px;
+}
+.presentation {
+  max-width: 601px;
+  text-align: center;
+}
+.presentation__container {
+  text-align: center;
+}
+.presentation__title {
+  margin-bottom: 15px;
+}
+.presentation__description {
+  margin-bottom: 30px;
+}
+.tovar__container {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+@media (max-width: 61.99875em) {
+  .tovar__container {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+.tovar__container_reverse {
+  flex-direction: row-reverse;
+}
+@media (max-width: 61.99875em) {
+  .tovar__container_reverse {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+}
+.tovar__image {
+  flex: 0 0 50%;
+}
+@media (max-width: 29.99875em) {
+  .tovar__image {
+    margin: 0 -15px;
+  }
+}
+.tovar__image img {
+  width: 100%;
+  max-width: 710px;
+  height: auto;
+  object-fit: cover;
+}
+.tovar__description {
+  max-width: 600px;
+}
+@media (max-width: 61.99875em) {
+  .tovar__description {
+    max-width: 710px;
+    margin-bottom: 42px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .tovar__description {
+    max-width: 100%;
+    padding: 0 4px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .tovar__description_reverse {
+    margin-bottom: 6px;
+  }
+}
+.tovar__title {
+  margin-bottom: 15px;
+}
+.tovar__text p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.tovar-slider__container {
+  position: relative;
+}
+.tovar-slider__title {
+  margin-bottom: 54px;
+  text-align: center;
+}
+@media (max-width: 29.99875em) {
+  .tovar-slider__title {
+    padding: 0 10px;
+  }
+}
+.tovar-slider__swiper {
+  max-width: 1280px;
+  z-index: 3;
+}
+@media (max-width: 90.625em) {
+  .tovar-slider__swiper {
+    z-index: 2;
+  }
+}
+.tovar-slider__slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 18px;
+}
+.tovar-slider__image {
+  width: 305px;
+  overflow: hidden;
+  text-align: center;
+}
+.tovar-slider__image img {
+  transition: 1s;
+  width: 100%;
+  max-width: 305px;
+  height: auto;
+}
+@media (max-width: 23.375em) {
+  .tovar-slider__image img {
+    max-width: 260px;
+  }
+}
+@media (hover: hover) {
+  .tovar-slider__image:hover img {
+    transform: scale(1.2) rotate(-4deg);
+  }
+}
+.tovar-slider__link {
+  position: relative;
+  padding-bottom: 6px;
+}
+.tovar-slider__link::after {
+  position: absolute;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+}
+@media (hover: hover) {
+  .tovar-slider__link:hover::after {
+    content: "";
+  }
+}
+.tovar-slider__control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  height: 35px;
+  top: 50%;
+  left: 35px;
+  right: 35px;
+  z-index: 2;
+}
+@media (max-width: 90.625em) {
+  .tovar-slider__control {
+    left: 0;
+    right: 0;
+  }
+}
+@media (max-width: 29.99875em) {
+  .tovar-slider__control {
+    top: 55%;
+    left: 6px;
+    right: 6px;
+  }
+}
+@media (max-width: 23.375em) {
+  .tovar-slider__control {
+    top: 45%;
+  }
+}
+.tovar-slider__next, .tovar-slider__prev {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--grey-white);
+}
+@media (max-width: 47.99875em) {
+  .tovar-slider__next, .tovar-slider__prev {
+    width: 25px;
+    height: 25px;
+  }
+}
+.tovar-slider__next::after, .tovar-slider__prev::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border-bottom: 1px solid;
+}
+@media (max-width: 47.99875em) {
+  .tovar-slider__next::after, .tovar-slider__prev::after {
+    width: 8px;
+    height: 8px;
+  }
+}
+.tovar-slider__next::after {
+  left: 42%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-right: 1px solid;
+}
+.tovar-slider__prev::after {
+  left: 60%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-left: 1px solid;
+}
