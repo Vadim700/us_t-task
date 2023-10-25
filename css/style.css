@@ -296,6 +296,12 @@ body {
 .presentation__description {
   margin-bottom: 30px;
 }
+.tovar.show .tovar__image,
+.tovar.show .tovar__title,
+.tovar.show .tovar__text {
+  opacity: 1;
+  transform: translateY(0);
+}
 .tovar__container {
   display: flex;
   align-items: center;
@@ -318,6 +324,9 @@ body {
 }
 .tovar__image {
   flex: 0 0 50%;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  transform: translateY(30%);
 }
 @media (max-width: 29.99875em) {
   .tovar__image {
@@ -352,6 +361,14 @@ body {
 }
 .tovar__title {
   margin-bottom: 15px;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  transform: translateY(80%);
+}
+.tovar__text {
+  transition: all 0.8s ease 0.5s;
+  opacity: 0;
+  transform: translateY(30%);
 }
 .tovar__text p:not(:last-child) {
   margin-bottom: 10px;
