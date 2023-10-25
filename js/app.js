@@ -51,6 +51,17 @@
             }
         }
     });
+    const onEntry = entry => {
+        entry.forEach((change => {
+            if (change.isIntersecting) change.target.classList.add("show");
+        }));
+    };
+    const options = {
+        threshold: [ .5 ]
+    };
+    const observer = new IntersectionObserver(onEntry, options);
+    const tovars = document.querySelectorAll(".tovar");
+    tovars.forEach((elem => observer.observe(elem)));
     window["FLS"] = true;
     isWebp();
 })();
